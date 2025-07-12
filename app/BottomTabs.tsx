@@ -2,17 +2,18 @@ import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import React from "react";
 import {
-  Animated,
-  Dimensions,
-  Image,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
+    Animated,
+    Dimensions,
+    Image,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View,
 } from "react-native";
 import { CurvedBottomBarExpo } from "react-native-curved-bottom-bar";
 
 const width = Dimensions.get("window").width;
+const height = Dimensions.get("window").height;
 
 const Screen1 = () => {
   return (
@@ -57,7 +58,7 @@ export default function App() {
         onPress={() => navigate(routeName)}
         style={styles.tabbarItem}
       >
-        {_renderIcon(routeName, selectedTab)}
+        {_renderIcon(routeName)}
       </TouchableOpacity>
     );
   };
@@ -76,7 +77,7 @@ export default function App() {
         borderWidth={1}
         circlePosition="CENTER"
         // initialRouteName="reels"
-        // borderTopLeftRight
+        borderTopLeftRight
         renderCircle={({ selectedTab, navigate }: any) => (
           <Animated.View style={styles.btnCircleUp}>
             <TouchableOpacity
@@ -126,13 +127,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "white",
-    // bottom: 30,
+    bottom: 30,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.2,
     shadowRadius: 1.41,
     elevation: 1,
-    top: -10,
+    // top: -10,
   },
   tabbarItem: {
     flex: 1,

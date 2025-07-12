@@ -1,16 +1,17 @@
 import { useVideoPlayer, VideoView } from "expo-video";
 import React, { useEffect } from "react";
 import {
-  Dimensions,
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
+    Dimensions,
+    Image,
+    Platform,
+    SafeAreaView,
+    StyleSheet,
+    Text,
+    View,
 } from "react-native";
 
 const width = Dimensions.get("screen").width;
-const height = Dimensions.get("window").height;
+const height = Dimensions.get("screen").height;
 
 export default function Reels({
   data,
@@ -134,10 +135,11 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
     justifyContent: "center",
     alignItems: "center",
-    flex: 1,
+    // flex: 1,
   },
   video: {
-    height: height - 120,
+    height: Platform.OS === "ios" ? height - 150 : height - 50,
+    position: "relative",
     width: width,
     marginVertical: "5%",
     columnGap: 10,

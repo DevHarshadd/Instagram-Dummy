@@ -19,13 +19,17 @@ export default function Index() {
 
   return (
     <SafeAreaView style={{ backgroundColor: "black" }}>
-      {/* Optional header */}
-
       <View
         style={{
           flexDirection: "row",
           justifyContent: "space-between",
-          paddingHorizontal: 20,
+
+          position: "absolute",
+          paddingHorizontal: "5%",
+          zIndex: 1,
+          top: 30,
+          left: 20,
+          right: 20,
         }}
       >
         <Text style={{ color: "white", fontSize: 22, fontWeight: "bold" }}>
