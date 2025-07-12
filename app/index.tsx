@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Dimensions, Image, SafeAreaView, Text, View } from "react-native";
 import { SwiperFlatList } from "react-native-swiper-flatlist";
-import fetchreelsVideo from "./apifetchVideo";
 import BottomTabs from "./BottomTabs";
 import Reels from "./reels";
-
+import { array } from "./videoArray";
 const { width, height } = Dimensions.get("window");
 
 export default function Index() {
@@ -12,9 +11,7 @@ export default function Index() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    fetchreelsVideo().then((data: any) => {
-      setReelsVideo(data);
-    });
+    setReelsVideo(array);
   }, []);
 
   return (
